@@ -1,0 +1,69 @@
+title: Blender on Oracle Cloud
+description: Single instance Blender install on Oracle Cloud Infrastructure
+schemaVersion: 1.1.0
+version: 1.0
+locale: en
+variableGroups:
+  - title: "Hidden"
+    variables:
+      - ${tenancy_ocid}
+      - ${user_ocid}
+      - ${region}
+      - ${fingerprint}
+      - ${private_key_path}
+      - ${private_key_password}
+      - ${private_key}
+      - ${region}
+      - ${compartment_ocid}
+      - ${ssh_pub_key_path}
+    visible: false
+  - title: "Configuration"
+    variables:
+      - ${compute_shape}
+      - ${compute_image_name}
+      - ${blender_url}
+  - title: "Credentials"
+    variables:
+      - ${ssh_pub_key}
+      - ${opc_passwd}
+      - ${vnc_passwd}
+
+variables:
+  blender_url:
+    type: string
+    title: Blender URL
+    description: The URL to use for downloading Blender.
+    required: true
+  ssh_pub_key:
+    title: Compute SSH Public Key
+    description: The public key to install on the compute for SSH access.
+    type: oci:core:ssh:publickey
+    required: true
+  compute_image_name:
+    title: Compute Image
+    type: oci:core:image:id
+    description: The image name to use for the compute instance.
+    dependsOn:
+      compartmentId: ${compartment_ocid}
+    required: true
+  compute_shape:
+    title: Compute Shape
+    type: oci:core:instanceshape:name
+    description: The type of Compute instance shape to use.
+    required: true
+    default: "VM.Standard2.1"
+    dependsOn:
+      compartmentId: ${compartment_ocid}
+  opc_passwd:
+    title: opc User Password
+    description: The password to set for the opc user account.
+    type: password
+    confirmation: true
+    required: true
+  vnc_passwd:
+    title: VNC Password
+    description: The password used for connecting to the VNC server.
+    type: password
+    confirmation: true
+    required: true
+  
