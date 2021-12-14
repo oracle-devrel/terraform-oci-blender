@@ -60,11 +60,12 @@ If you're using a Compute shape that has a GPU, make sure to enable GPU renderin
 ### Prerequisites
 You must have an OCI account.  [Click here](https://www.oracle.com/cloud/free/?source=:ex:tb:::::WWMK211208P00078&SC=:ex:tb:::::WWMK211208P00078&pcode=WWMK211208P00078) to create a new cloud account.
 
+
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.5 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
 
 ## Providers
 
@@ -105,18 +106,18 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_blender_url"></a> [blender\_url](#input\_blender\_url) | The URL for downloading Blender. | `string` | `"https://mirror.clarkson.edu/blender/release/Blender2.93/blender-2.93.6-linux-x64.tar.xz"` | no |
 | <a name="input_compartment_ocid"></a> [compartment\_ocid](#input\_compartment\_ocid) | The compartment OCID to deploy resources to | `string` | `""` | no |
-| <a name="input_compute_image_name"></a> [compute\_image\_name](#input\_compute\_image\_name) | The name of the compute image to use for the compute instances. | `string` | n/a | yes |
-| <a name="input_compute_shape"></a> [compute\_shape](#input\_compute\_shape) | See https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm?source=:ex:tb:::::WWMK211208P00078&SC=:ex:tb:::::WWMK211208P00078&pcode=WWMK211208P00078 for the different compute shapes available. | `string` | `"VM.Standard2.1"` | no |
-| <a name="input_fingerprint"></a> [fingerprint](#input\_fingerprint) | 'API Key' fingerprint, more details can be found at https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/credentials.htm?source=:ex:tb:::::WWMK211208P00078&SC=:ex:tb:::::WWMK211208P00078&pcode=WWMK211208P00078#two | `string` | `""` | no |
+| <a name="input_compute_image_name"></a> [compute\_image\_name](#input\_compute\_image\_name) | The name of the compute image to use for the compute instances. | `string` | `""` | no |
+| <a name="input_compute_shape"></a> [compute\_shape](#input\_compute\_shape) | See https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm for the different compute shapes available. | `string` | `"VM.Standard2.1"` | no |
+| <a name="input_fingerprint"></a> [fingerprint](#input\_fingerprint) | 'API Key' fingerprint, more details can be found at https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/credentials.htm#two | `string` | `""` | no |
 | <a name="input_opc_passwd"></a> [opc\_passwd](#input\_opc\_passwd) | The password to use for the opc OL8 account. | `string` | n/a | yes |
 | <a name="input_private_key"></a> [private\_key](#input\_private\_key) | The private key (provided as a string value) | `string` | `""` | no |
 | <a name="input_private_key_password"></a> [private\_key\_password](#input\_private\_key\_password) | The password to use for the private key | `string` | `""` | no |
-| <a name="input_private_key_path"></a> [private\_key\_path](#input\_private\_key\_path) | Path to private key used to create OCI 'API Key', more details can be found at https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/credentials.htm?source=:ex:tb:::::WWMK211208P00078&SC=:ex:tb:::::WWMK211208P00078&pcode=WWMK211208P00078#two | `string` | `""` | no |
-| <a name="input_region"></a> [region](#input\_region) | OCI Region as documented at https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm?source=:ex:tb:::::WWMK211208P00078&SC=:ex:tb:::::WWMK211208P00078&pcode=WWMK211208P00078 | `string` | `"us-phoenix-1"` | no |
+| <a name="input_private_key_path"></a> [private\_key\_path](#input\_private\_key\_path) | Path to private key used to create OCI 'API Key', more details can be found at https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/credentials.htm#two | `string` | `""` | no |
+| <a name="input_region"></a> [region](#input\_region) | OCI Region as documented at https://docs.cloud.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm | `string` | `"us-phoenix-1"` | no |
 | <a name="input_ssh_pub_key"></a> [ssh\_pub\_key](#input\_ssh\_pub\_key) | The SSH public key contents to use for the compute instances. | `string` | `""` | no |
 | <a name="input_ssh_pub_key_path"></a> [ssh\_pub\_key\_path](#input\_ssh\_pub\_key\_path) | The path to the SSH public key to use for the compute instances. | `string` | `""` | no |
-| <a name="input_tenancy_ocid"></a> [tenancy\_ocid](#input\_tenancy\_ocid) | OCI tenant OCID, more details can be found at https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm?source=:ex:tb:::::WWMK211208P00078&SC=:ex:tb:::::WWMK211208P00078&pcode=WWMK211208P00078#five | `any` | n/a | yes |
-| <a name="input_user_ocid"></a> [user\_ocid](#input\_user\_ocid) | OCI user OCID, more details can be found at https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm?source=:ex:tb:::::WWMK211208P00078&SC=:ex:tb:::::WWMK211208P00078&pcode=WWMK211208P00078#five | `string` | `""` | no |
+| <a name="input_tenancy_ocid"></a> [tenancy\_ocid](#input\_tenancy\_ocid) | OCI tenant OCID, more details can be found at https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#five | `any` | n/a | yes |
+| <a name="input_user_ocid"></a> [user\_ocid](#input\_user\_ocid) | OCI user OCID, more details can be found at https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#five | `string` | `""` | no |
 | <a name="input_vnc_passwd"></a> [vnc\_passwd](#input\_vnc\_passwd) | The password to use for connecting to the VNC session. | `string` | n/a | yes |
 
 ## Outputs
