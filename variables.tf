@@ -34,8 +34,8 @@ variable "private_key_password" {
 # see https://docs.oracle.com/en-us/iaas/images/ for image names
 variable "compute_image_name" {
   type        = string
+  default = ""
   description = "The name of the compute image to use for the compute instances."
-  required    = true
 }
 variable "ssh_pub_key_path" {
   type        = string
@@ -52,7 +52,6 @@ variable "blender_url" {
   type        = string
   default     = "https://mirror.clarkson.edu/blender/release/Blender2.93/blender-2.93.6-linux-x64.tar.xz"
   description = "The URL for downloading Blender."
-  required    = true
 }
 
 variable "opc_passwd" {
